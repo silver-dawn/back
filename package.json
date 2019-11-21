@@ -1,0 +1,13 @@
+{
+  "name": "fed-standard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yufei",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn && docsify serve ./"
+  },
+  "devDependencies": {
+    "docsify-cli": "^4.3.0"
+  }
+}
