@@ -20,11 +20,7 @@
 
 欢迎大家在交流群中多交流学习及面试相关的内容，目前群内交流气氛很浓厚，通过交流可以了解到很多面试相关的内容。
 
-<figure>![](./1-小册食用指南_files/167d9f9781c40192)
-
-<figcaption>加群途径</figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69482027-44585180-0e51-11ea-92d7-d3e14eeb3567.png)
 
 ## 内容
 
