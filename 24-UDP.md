@@ -35,11 +35,7 @@
 
 因此 UDP 的头部开销小，只有八字节，相比 TCP 的至少二十字节要少得多，在传输数据报文时是很高效的。
 
-<figure>![](./25-UDP_files/163195b245ceb89c)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481680-394ff200-0e4e-11ea-97cb-cd7ea03ac186.png)
 
 UDP 头部包含了以下几个数据
 

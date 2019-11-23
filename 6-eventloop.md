@@ -24,11 +24,7 @@
 
 可以把执行栈认为是一个存储函数调用的**栈结构**，遵循先进后出的原则。
 
-<figure>![](./7-Event Loop_files/1670d2d20ead32ec)
-
-<figcaption>执行栈可视化</figcaption>
-
-</figure>
+![1670d2d20ead32ec](https://user-images.githubusercontent.com/2206056/69480643-4b2c9780-0e44-11ea-978e-3176a8fa3561.gif)
 
 当开始执行 JS 代码时，首先会执行一个 `main` 函数，然后执行我们的代码。根据先进后出的原则，后执行的函数会先弹出栈，在图中我们也可以发现，`foo` 函数后执行，当执行完毕后就从栈中弹出了。
 
@@ -42,7 +38,7 @@
     }
     bar()
 
-<figure>![](./7-Event Loop_files/1670c0e21540090c)
+![image](https://user-images.githubusercontent.com/2206056/69480689-bc6c4a80-0e44-11ea-958e-7681bdeee9c8.png)
 
 <figcaption>函数执行顺序</figcaption>
 
@@ -52,12 +48,14 @@
 
 当我们使用递归的时候，因为栈可存放的函数是有**限制**的，一旦存放了过多的函数且没有得到释放的话，就会出现爆栈的问题
 
+```js
     function bar() {
       bar()
     }
     bar()
+```
 
-<figure>![](./7-Event Loop_files/1670c128acce975f)
+![image](https://user-images.githubusercontent.com/2206056/69480698-d1e17480-0e44-11ea-98fd-4af99324a25d.png)
 
 <figcaption>爆栈</figcaption>
 
@@ -69,7 +67,8 @@
 
 上一小节我们讲到了什么是执行栈，大家也知道了当我们执行 JS 代码的时候其实就是往执行栈中放入函数，那么遇到异步代码的时候该怎么办？其实当遇到异步的代码时，会被**挂起**并在需要执行的时候加入到 Task（有多种 Task） 队列中。一旦执行栈为空，Event Loop 就会从 Task 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 JS 中的异步还是同步行为。
 
-<figure>![](./7-Event Loop_files/16740fa4cd9c6937)
+![image](https://user-images.githubusercontent.com/2206056/69480855-1faaac80-0e46-11ea-8bcc-e92542d8ce9d.png)
+<figure>
 
 <figcaption>事件循环</figcaption>
 
@@ -149,11 +148,7 @@ Node 中的 Event Loop 和浏览器中的是完全不相同的东西。
 
 Node 的 Event Loop 分为 6 个阶段，它们会按照**顺序**反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。
 
-<figure>![](./7-Event Loop_files/1670c3fe3f9a5e2b)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69480868-4cf75a80-0e46-11ea-9544-24c41554c3bd.png)
 
 ### timer
 
@@ -227,11 +222,7 @@ close callbacks 阶段执行 close 事件
 
 上面介绍的都是 macrotask 的执行情况，对于 microtask 来说，它会在以上每个阶段完成前**清空** microtask 队列，下图中的 Tick 就代表了 microtask
 
-<figure>![](./7-Event Loop_files/16710fb80dd42d27)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69480873-67313880-0e46-11ea-8e66-73d24b29d842.png)
 
     setTimeout(() => {
       console.log('timer21')

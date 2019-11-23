@@ -511,11 +511,7 @@ TLS 协议位于传输层之上，应用层之下。首次进行 TLS 协议传�
 
 **TLS 握手过程如下图：**
 
-<figure>![](./27-HTTP 及 TLS_files/1635260126b3a10c)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481732-b0858600-0e4e-11ea-920c-06fbb4f66aa0.png)
 
 客户端发送一个随机值以及需要的协议和加密方式。
 

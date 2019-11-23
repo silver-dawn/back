@@ -26,31 +26,19 @@ React 和 Vue 应该是国内当下最火热的前端框架，当然 Angular 也
 
 传统的 MVC 架构通常是使用控制器更新模型，视图从模型中获取数据去渲染。当用户有输入时，会通过控制器去更新模型，并且通知视图进行更新。
 
-<figure>![](./19-React 和 Vue 两大框架之间的相爱相杀_files/167cad938817eb7e)
-
-<figcaption>MVC</figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481554-520bd800-0e4d-11ea-8f72-9487aac438cd.png)
 
 但是 MVC 有一个巨大的缺陷就是**控制器承担的责任太大**了，随着项目愈加复杂，控制器中的代码会越来越**臃肿**，导致出现不利于**维护**的情况。
 
 在 MVVM 架构中，引入了 **ViewModel** 的概念。ViewModel 只关心数据和业务的处理，不关心 View 如何处理数据，在这种情况下，View 和 Model 都可以独立出来，任何一方改变了也不一定需要改变另一方，并且可以将一些可复用的逻辑放在一个 ViewModel 中，让多个 View 复用这个 ViewModel。
 
-<figure>![](./19-React 和 Vue 两大框架之间的相爱相杀_files/167ced454926a458)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481558-546e3200-0e4d-11ea-91c6-eed18c55b21a.png)
 
 以 Vue 框架来举例，ViewModel 就是组件的实例。View 就是模板，Model 的话在引入 Vuex 的情况下是完全可以和组件分离的。
 
 除了以上三个部分，其实在 MVVM 中还引入了一个隐式的 Binder 层，实现了 View 和 ViewModel 的绑定。
 
-<figure>![](./19-React 和 Vue 两大框架之间的相爱相杀_files/167cf01bd8430243)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481561-5801b900-0e4d-11ea-859d-0b69a058ff75.png)
 
 同样以 Vue 框架来举例，这个**隐式**的 Binder 层就是 Vue 通过解析模板中的插值和指令从而实现 View 与 ViewModel 的绑定。
 

@@ -10,21 +10,14 @@
 
 在之前的版本中，如果你拥有一个很复杂的复合组件，然后改动了最上层组件的 `state`，那么调用栈可能会很长
 
-<figure>![](./22-React 常考基础知识点_files/164358b0310f476c)
-
-<figcaption></figcaption>
-
-</figure>
+![image](https://user-images.githubusercontent.com/2206056/69481632-eece7580-0e4d-11ea-93a5-b6464826ce18.png)
 
 调用栈过长，再加上中间进行了复杂的操作，就可能导致长时间阻塞主线程，带来不好的用户体验。Fiber 就是为了解决该问题而生。
 
 Fiber 本质上是一个虚拟的堆栈帧，新的调度器会按照优先级自由调度这些帧，从而将之前的同步渲染改成了异步渲染，在不影响体验的情况下去分段计算更新。
 
-<figure>![](./22-React 常考基础知识点_files/164358f89595d56f)
+![image](https://user-images.githubusercontent.com/2206056/69481634-f261fc80-0e4d-11ea-874d-490cd3c51a82.png)
 
-<figcaption></figcaption>
-
-</figure>
 
 对于如何区别优先级，React 有自己的一套逻辑。对于动画这种实时性很高的东西，也就是 16 ms 必须渲染一次保证不卡顿的情况下，React 会每 16 ms（以内） 暂停一下更新，返回来继续渲染动画。
 
@@ -86,7 +79,7 @@ Fiber 本质上是一个虚拟的堆栈帧，新的调度器会按照优先级�
 
 第二，虽然调用了三次 `setState` ，但是 `count` 的值还是为 1。因为多次调用会合并为一次，只有当更新结束后 `state` 才会改变，三次调用等同于如下代码
 
-    Object.assign(  
+    Object.assign(
       {},
       { count: this.state.count + 1 },
       { count: this.state.count + 1 },
